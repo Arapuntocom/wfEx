@@ -1,0 +1,129 @@
+<div class="container">	
+	<ol class="breadcrumb ms">
+	  	<li><a ui-sref="home">Inicio</a></li>
+	  	<li class="active">Evaluaciones</li>
+	</ol>
+
+	<h1 class="topic-title">Evaluaciones</h1>
+	<div ng-repeat="evaluation in evaluations">
+		<div class="panel panel-default">
+			<div class="row">
+				<div class="panel-body">
+					<div class="col-xs-2 img-container">
+						<img ng-src="{{evaluation.image}}"/>
+					</div>
+					<div class="col-xs-10">
+						<h2 class="ms-h2">{{evaluation.name}}</h2>
+						<p>{{evaluation.description}}</p>
+						<div><!-- Falta if para cuando se Repita -->
+							<div class="btns"> 
+								<md-button class="btn btn-primary square" ui-sref="evaluations_questions({ id: evaluation.id, qId:1})">Comenzar Evaluación</md-button>
+							</div>
+							
+							<div >
+							<!-- <% if current_user %> -->
+
+								<!-- <% if @continue[evaluation.id] %> -->
+									<div class="btns">
+										<!-- <%= button_to "Continuar última evaluación", { action: "continue", evaluation_id: evaluation.id }, method: :get, class: "btn btn-primary square" %> -->
+										<md-button class="btn btn-primary square" ng-href="{{googleUrl}}" target="_blank">Continuar última evaluación</md-button>
+									</div>
+								<!-- <% end %> -->
+
+								<!-- <% if @last_grade[evaluation.id] %> -->
+									<!-- <div class="last-grade" ng-if="(test|filter:{user_id:user.id}).length >0" >
+
+
+
+										<img ng-src ="images/evaluations/results/grade.png", size: "12x12", alt: "grade", class: "mini-grade" />
+										<strong class="results-titles">Calificación en el último intento: <span class="results-grade"><%= number_with_precision(@last_grade[evaluation.id].grade, :precision => 1 )%></span></strong>
+									</div> -->
+								<!-- <% end %> -->
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+		<div ng-init="evalSize = (compositions | filter:{evaluation_id:evaluation.id}).length">
+			<div ng-repeat="composition in compositions | filter:{evaluation_id:evaluation.id}">
+				<div class="row">
+					<div class="col-xs-10" ng-if="questions[composition.question_id-1].question_type == 'VF'">
+						<h1 class="question-instructions">Selecciona Verdadero o Falso</h1>	
+					</div>
+					<div class="col-xs-10" ng-if="questions[composition.question_id-1].question_type == 'Selección múltiple'">
+						<h1 class="question-instructions">Selecciona la alternativa correcta</h1>	
+					</div>
+					<div class="col-xs-10" ng-if="questions[composition.question_id-1].question_type == 'Palabra faltante'">
+						<h1 class="question-instructions">Selecciona el concepto más apropiado</h1>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7 panel panel-default">
+						<div class="panel-body">
+							<p class="question">{{ questions[composition.question_id-1].sentence }}</p>
+							<div class="question-img-container"  ng-if="questions[composition.question_id-1].image"> 
+								<img ng-src="images/{{questions[composition.question_id-1].image}}"/>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-1">
+						<div class="arrow-container">
+							<span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+						</div>
+					</div>
+
+					<div class="col-xs-4 panel panel-default">
+						<div class="panel-body">
+							<form name="submitAns">
+
+								<div ng-if="questions[composition.question_id-1].question_type != 'VF'">
+									<div class="radio" ng-repeat="alternative in alternatives | filter:{question_id: questions[composition.question_id-1].id}"> 	
+										<label class="alternatives">
+											<div ng-if="questions[composition.question_id-1].id == (compositions | filter:{evaluation_id:evaluation.id}).length">
+												<input type="radio" name="alternativa1" ng-click="cambiaCalificable()"/>
+												{{ alternative.sentence }}
+											</div>
+											<div ng-if="questions[composition.question_id-1].id < (compositions | filter:{evaluation_id:evaluation.id}).length">
+												<input type="radio" name="alternativa1"/>
+												{{ alternative.sentence }}
+											</div>
+										</label>
+									</div>
+								</div>
+								<div ng-if="questions[composition.question_id-1].question_type == 'VF'">
+									<div class="radio" ng-repeat="alternative in alternatives"> 	
+										<label class="alternatives" ng-if="alternative.question_id == 1">
+											<div ng-if="questions[composition.question_id-1].id == (compositions | filter:{evaluation_id:evaluation.id}).length">
+												<input type="radio"  name="name" ng-click="cambiaCalificable()"/> 
+												{{alternative.sentence}}
+											</div>
+											<div ng-if="questions[composition.question_id-1].id < (compositions | filter:{evaluation_id:evaluation.id}).length">
+												<input type="radio"  name="name" />
+												{{alternative.sentence}}
+											</div>
+										</label>
+									</div>
+								</div>
+
+								<button ng-show="questions[composition.question_id-1].id < (compositions | filter:{evaluation_id:evaluation.id}).length"  class="btn btn-primary square" ui-sref="evaluations_questions({ id: questions[composition.question_id-1].id })" >Continuar</button>
+								
+								<button ng-show="questions[composition.question_id-1].id == (compositions | filter:{evaluation_id:evaluation.id}).length"  class="btn btn-primary square" ui-sref="evaluations" ng-disabled="!calificable()">Calificar</button>
+
+								<button ng-show="questions[composition.question_id-1].id <= (compositions | filter:{evaluation_id:evaluation.id}).length"  class="btn btn-primary square" ui-sref="evaluations">Pausar Evaluación</button>
+		 					</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>-->
+
+	</div>	
+
+	
+</div>

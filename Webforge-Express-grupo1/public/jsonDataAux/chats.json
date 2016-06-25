@@ -1,0 +1,18 @@
+[{
+	"title": "Titulo chat",
+	"id": 4,
+	"user": {
+		"name": "Felipe Vilches"
+	},
+	"ultimoMensaje": "Este es el ultimo mensaje que se ha agregado al chat",
+	"autorUltimoMensaje": "Sebastian Meneses"
+},
+{
+	"title": "Titulo chat",
+	"id": 5,
+	"user": {
+		"name": "Veronica Dominguez"
+	},
+	"ultimoMensaje": "Este es el ultimo mensaje que se ha agregado al chat",
+	"autorUltimoMensaje": "Francisco Vergara"
+}]

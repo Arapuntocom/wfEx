@@ -1,0 +1,109 @@
+ <div class="container">
+	<ol class="breadcrumb ms">
+	  	<li><a ui-sref="home">Inicio</a></li>
+	  	<li><a ui-sref="heuristics">Heurísticas</a></li>
+	  	<li class="active">H{{ heuristica.id }}: {{ heuristica.nombre }}</li>
+	</ol>
+	
+	<h1 class="topic-title">H{{ heuristica.id }}: {{ heuristica.nombre }}</h1>
+
+	<div>
+		<div>
+			<p>{{ heuristica.descripcion }}</p>
+		</div>
+
+		<div class="side-bar">
+			<h2 class="ms-h2">En este artículo</h2>
+			<ul>
+				<li><a href="/heuristics/2#do">Qué hacer</a></li>
+					<li><a href="/heuristics/2#dont">Qué no hacer</a></li>
+				<li><a href="/heuristics/2#example">Ejemplos</a></li>
+				<li><a href="/heuristics/2#references">Recursos relacionados</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<span id="do" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Qué hacer</h2>
+		<ul>
+			<li ng-repeat="quehacer in heuristica.queHacer">{{ quehacer }}</li>
+		</ul>
+	</div>
+	
+	<span id="dont" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Qué no hacer</h2>
+		<ul>
+			<li ng-repeat="quenohacer in heuristica.queNoHacer">{{ quenohacer }}</li>
+		</ul>
+	</div>
+	
+	<span id="example" class="anchor"></span>
+	<div>
+		<h2 class="ms-h2">Ejemplos</h2>
+			<div>
+					<img src="/assets/examples/h2/e1-9613ec9a9ed466ea9deae70a6400d6ff.png" alt="E1" />
+					<p> ITunes se organiza como una librería que contiene tu multimedia separándola por tipo.</p>
+					<img src="/assets/examples/h2/e2-be8057d9bece45baa79ebbced3be10c4.png" alt="E2" />
+					<p> En Mindomo las ramas y la jerarquía de un mapa mental pueden reorganizarse fácilmente de una forma no lineal. El servicio implementa perfectamente el paradigma.</p>
+		</div>
+	</div>
+
+	<div>
+
+
+			<div class="back-box" ng-show="heuristica.id > 1">
+				<a ui-sref="heuristics_show({id: heuristica.id-1})">
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+						<div>H{{heuristica.id - 1}}: {{heuristicaAnterior.nombre}}</div>
+					</div>
+				</a>				
+			</div> 
+
+
+
+			<div class="back-box" ng-show="heuristica.id == 1">
+				<a ui-sref="introduction">
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+						<div>Introducción</div>
+					</div>
+				</a>				
+			</div>
+
+
+
+
+			<div class="next-box" ng-show="heuristica.id < 10">
+				<a ui-sref="heuristics_show({id: heuristica.id+1})">
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+						<div>H{{heuristica.id + 1}}: {{heuristicaSiguiente.nombre}}</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="next-box" ng-show="heuristica.id == 10">
+				<a href="#">
+					<div>
+						<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+						<div>Evaluación Heurística</div>
+					</div>
+				</a>
+			</div>
+	</div>
+	
+
+
+<span id="references" class="anchor"></span>
+	<div ng-show="heuristica.recursos.length > 0">
+		<h2 class="ms-h2">Recursos relacionados</h2>
+
+			<div ng-repeat="recurso in heuristica.recursos">
+				<a href="#">{{ recurso }}</a>
+			</div>
+	</div>
+
+</div>

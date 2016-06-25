@@ -1,0 +1,89 @@
+ <div class="container" ng-init="compositions = allcompositions()">
+	<ol class="breadcrumb ms">
+	  	<li><a ui-sref="home">Inicio</a></li>
+	  	<li><a ui-sref="evaluations">Evaluaciones</a></li>
+	  	<li class="active">Evaluación {{idEv}}: Pregunta {{ index.id }}</li>
+	</ol>
+
+	<div ng-init="questions = allquestions()">
+		<div ng-init="alternatives = allalternatives()">
+			<div class="progress progress-striped active">
+				<div id="bar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:{{ (100*cantPreguntasRespondidas)/cantPreguntas }}%"> 
+					{{ 100*cantPreguntasRespondidas/cantPreguntas }}%
+				</div>
+			</div>
+
+				
+			<div ng-repeat="composition in compositions | filter:{number:index.id , evaluation_id:idEv}:true">
+				<div ng-repeat="question in questions | filter:{id:composition.question_id}:true" >
+					<div class="row">						
+						
+
+						<div class="panel-body">
+
+							<div class="col-xs-11" ng-if="question.question_type == 'VF'">
+								<h1 class="question-instructions">Selecciona Verdadero o Falso</h1>	
+							</div>
+							<div class="col-xs-11" ng-if="question.question_type == 'Selección múltiple'">
+								<h1 class="question-instructions">Selecciona la alternativa correcta</h1>	
+							</div>
+							<div class="col-xs-11" ng-if="question.question_type == 'Palabra faltante'">
+								<h1 class="question-instructions">Selecciona el concepto más apropiado</h1>	
+							</div>
+						
+
+							<div class="row">							
+
+								<div class="col-xs-2 panel panel-default">	
+									<div ng-repeat="composition in compositions | filter:{evaluation_id:idEv}:true | orderBy:number">	
+
+										<a ui-sref="evaluations_questions({ id: idEv, qId: (composition.number) })">Pregunta {{composition.number}}</a></li>
+									</div>
+								</div>
+
+								<div class="col-xs-1"></div>
+
+								<div class="col-xs-4 panel panel-default">
+									<div class="panel-body">
+										<p class="question">{{ question.sentence }}</p>
+										<div class="question-img-container"  ng-if="question.image"> 
+											<img ng-src="../../images/{{question.image}}"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-1">
+									<div class="arrow-container">
+										<span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+									</div>
+								</div>
+
+								<div class="col-xs-4 panel panel-default">
+									<div class="panel-body">	
+
+										<div class="radio" ng-repeat="objt in alternatives | filter:{question_id:question.id }:true"> 		
+											<label class="alternative">
+												<!--<input type="radio" name="alternativa" id="alternativa" ng-model="answer.alternative" ng-value="{{ objt.alternative_id }}" ng-change="change()" />-->
+												<input type="radio" name="alternativa" ng-model="answer.alternative" ng-value="{{ objt.alternative_id }}" />
+												{{ objt.sentence }}
+											</label>
+										</div>    
+										
+
+										<md-button ng-show="index.id < cantPreguntas" class="btn btn-primary square" ui-sref="evaluations_questions({ id: idEv, qId: (index.id+1) })">Continuar</md-button>
+
+										<md-button ng-show="index.id == cantPreguntas" class="btn btn-primary square" ui-sref="evaluations_results({id: idEv})">Calificar</md-button>
+
+										<md-button ng-show="index.id <= cantPreguntas" class="btn btn-primary square" ui-sref="evaluations">Pausar Evaluación</md-button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>			
+</div>
+

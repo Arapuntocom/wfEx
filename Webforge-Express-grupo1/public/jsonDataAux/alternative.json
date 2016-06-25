@@ -1,0 +1,138 @@
+[
+
+{   "question_id": 1, 
+	"sentence": "Verdadero"
+},
+
+{   "question_id": 1, 
+	"sentence": "Falso"
+},
+
+{
+	"question_id": 11,
+	"sentence": "Se utiliza el lenguaje del usuario como indica la H2.",
+	"order": "a"
+},
+
+{	"question_id": 11,
+	"sentence": "No se respetan estándares faltando a la H4.",
+	"order": "b"
+},
+
+{	"question_id": 11,
+	"sentence": "Se utilizan adecuadamente los estándares de la plataforma siguiendo los principios de la H4.",
+	"order": "c"
+},
+
+{
+	"question_id": 12,
+	"sentence": "Se utiliza un objeto representativo del mundo real para el ingreso de datos lo que hace innecesario y confuso para el usuario agregar otros mecanismos.",
+	"order": "a"
+},
+
+{	"question_id": 12,
+	"sentence": "El ingreso de datos por medio de teclado es prioritario como estándar por sobre el diseño presentado por la interfaz.",
+	"order": "b"
+},
+
+{	"question_id": 12,
+	"sentence": "Ninguna de las alternativas anteriores es correcta.",
+	"order": "c"
+},			
+
+{	"question_id": 13,
+	"sentence": "La interfaz ofrece múltiples caminos a seguir para el usuario facilitando la flexibilidad y navegación.",
+	"order": "a"
+},
+
+{	"question_id": 13,
+	"sentence": "La ayuda se encuentra claramente definida.",
+	"order": "b"},
+
+{	"question_id": 13,
+	"sentence": "Las opciones presentadas son confusas.",
+	"order": "c"},
+
+{	"question_id": 14,
+	"sentence": "Se utiliza un método de interacción adecuado para el ingreso de información.",
+	"order": "a"},		
+				   
+{	"question_id": 14,
+	"sentence": "Se presentan las instrucciones con claridad.",
+	"order": "b"},		
+
+{	"question_id": 14,
+	"sentence": "Los elementos son organizados respetando espacios y símbolos para representar el formato del dato a ingresar.",
+	"order": "c"},
+
+{	"question_id": 15,
+	"sentence": "Es una implementación inteligente de los calendarios como método de interacción.",
+	"order": "a"},
+
+{	"question_id": 15,
+	"sentence": "Es difícil para el usuario ingresar el día de su nacimiento a través de este método.",
+	"order": "b"},
+
+{	"question_id": 15,
+	"sentence": "Es difícil para el usuario indicar el mes y año de su nacimiento a través de la interfaz.",
+	"order": "c"},
+{	"question_id": 16,
+	"sentence": "H4.",
+	"order": "a"},
+
+{	"question_id": 16,
+	"sentence": "H8.",
+	"order": "b"},
+
+{	"question_id": 16,
+	"sentence": "H6.",
+	"order": "c"},
+
+{	"question_id": 17,
+	"sentence": "H2.",
+	"order": "a"},
+
+{	"question_id": 17,
+	"sentence": "H9.",
+	"order": "b"},
+
+{	"question_id": 17,
+	"sentence": "H5.",
+	"order": "c"},
+
+{	"question_id": 18,
+	"sentence": "Prevenir.",
+	"order": "a"},
+
+{	"question_id": 18,
+	"sentence": "Explicar.",
+	"order": "b"},
+
+{	"question_id": 18,
+	"sentence": "Resaltar.",
+	"order": "c"},
+
+{	"question_id": 19,
+	"sentence": "H7.",
+	"order": "a"},
+
+{	"question_id": 19,
+	"sentence": "H4.",
+	"order": "b"},
+
+{	"question_id": 19,
+	"sentence": "H1.",
+	"order": "c"},
+
+{	"question_id": 20,
+	"sentence": "Administradores.",
+	"order": "a"},
+
+{	"question_id": 20,
+	"sentence": "Casuales.",
+	"order": "b"},
+
+{	"question_id": 20,
+	"sentence": "Expertos.",
+	"order": "c"}
+]

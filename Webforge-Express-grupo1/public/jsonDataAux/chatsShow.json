@@ -1,0 +1,29 @@
+{
+	"id": 2,
+	"title": "Titulo del chat",
+	"user": {
+		"name": "Felipe Vilches"
+	},
+	"messages": [
+
+		{
+			"id": 2,
+			"autor": "Maria Francisca",
+			"created_at": "2016-05-23T21:57:12.879Z",
+			"body": "Este es el contenido del mensaje"
+		},
+		{
+			"id": 3,
+			"autor": "Alan Guzman",
+			"created_at": "2016-05-23T21:57:12.879Z",
+			"body": "Este es el contenido del mensaje"
+		},
+		{
+			"id": 4,
+			"autor": "Conan Blasi",
+			"created_at": "2016-05-23T21:57:12.879Z",
+			"body": "Este es el contenido del mensaje"
+		}
+
+	]
+}

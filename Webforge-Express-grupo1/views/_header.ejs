@@ -1,0 +1,47 @@
+  <nav class="navbar-fixed-top barra-navegacion">
+
+	<div class="app-bar">
+		<div class="container">
+
+			<a class="navbar-brand" ui-sref="home">
+				<img alt="app logo" class="app-logo" src="/images/logo.png" />
+			</a>
+			<span class="app-bar-divider"></span>
+			<ul class="app-bar-menu">        
+
+				<li><a href="" class="dropdown-toggle">Heurísticas</a>
+					<ul class="d-menu menu-heuristicas" data-role="dropdown">
+
+						<li><a ui-sref="heuristics">Introducción</a></li>
+						<li><a ui-sref="heuristics_show({id: 1})">H1: Visibilidad del Estado del Sistema</a></li>
+						<li><a ui-sref="heuristics_show({id: 2})">H2: Correspondencia entre el Sistema y el Mundo Real</a></li>
+						<li><a ui-sref="heuristics_show({id: 3})">H3: Control y Libertad</a></li>
+						<li><a ui-sref="heuristics_show({id: 4})">H4: Consistencia y Estándares</a></li>
+						<li><a ui-sref="heuristics_show({id: 5})">H5: Prevención de Errores</a></li>
+						<li><a ui-sref="heuristics_show({id: 6})">H6: Reconocer antes que Recordar</a></li>
+						<li><a ui-sref="heuristics_show({id: 7})">H7: Flexibilidad y Eficiencia de Uso</a></li>
+						<li><a ui-sref="heuristics_show({id: 8})">H8: Estética de Diálogos y Diseño Minimalista</a></li>
+						<li><a ui-sref="heuristics_show({id: 9})">H9: Ayuda a los Usuarios ante Errores</a></li>
+						<li><a ui-sref="heuristics_show({id: 10})">H10: Ayuda y Documentación</a></li>
+						<li><a href="/heuristic_evaluation">Evaluación Heurística</a></li>
+					</ul>
+				</li>
+
+				<li><a ui-sref="evaluations">Evaluaciones</a></li>
+				<li><a ui-sref="practices">Módulo de Práctica</a></li>
+				<li><a href="/references">Recursos</a></li>
+
+			</ul>
+
+
+			<!-- Esto aparecera en la derecha -->
+
+			<div class="app-bar-element place-right">
+				<ul class="app-bar-menu">      
+					<li><a href="/login">Iniciar sesión</a></li>
+				</ul>
+
+			</div> <!-- </derecha> -->
+		</div> <!-- </contenedor menu completo> -->
+	</div> <!-- </app-bar> -->
+</nav>

@@ -1,0 +1,48 @@
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+			<li><a ui-sref="home">Inicio</a></li>
+			<li class="active"> Cursos</li>
+		</ol>
+	</div>
+	<div>
+		<h1 class="question-instructions">Cursos Inscritos</h1>
+
+		<table class="table" ng-show="cursos.length > 0">
+			<tr>
+				<th>Nombre</th>
+				<th>Año</th>
+				<th>Semestre</th>
+				<th>Alumnos</th>
+				<th class="text-center" colspan="3">Operaciones</th>
+			</tr>
+
+
+			<tr ng-repeat="curso in cursos">			
+				<td>{{ curso.name }}</td>
+				<td>{{ curso.year }}</td>
+				<td>{{ curso.semester }}</td>
+				<td>{{ curso.users }}</td>
+				<td class="text-center"><a class="glyphicon glyphicon-eye-open" ui-sref="courses_show({ id: curso.id })"></a></td>
+
+			</tr>
+		</table>
+
+		<p ng-show="cursos.length == 0">No hay cursos.</p>
+
+
+		<div>
+			<a class="btn btn-primary square" ui-sref="home">Volver</a>
+		</div>
+	</div>
+</div>
+
+<div data-role="dialog" id="dialog" class="padding20 dialog" data-close-button="true" data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" style="width: auto; height: auto; visibility: visible; left: 817.5px; top: 404.5px;">
+	<h1>¿Eliminar Curso?</h1>
+	<p>
+		¿Esta seguro que desea eliminar el curso <b id="delete-course-name"></b>?
+	</p>
+	<a class="btn btn-primary square" id="delete-course-button" rel="nofollow" data-method="delete" href="">Eliminar</a></td>
+	<button name="button" type="submit" onclick="deleteCourseDialog.hideDialog()" class="btn btn-primary square">Cancelar</button>
+</div>
+

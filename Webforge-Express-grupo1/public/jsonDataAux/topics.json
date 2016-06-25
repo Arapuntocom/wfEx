@@ -1,0 +1,54 @@
+[
+	{	
+	    "name": "Introducción", 
+	    "path":"introduction"
+	},
+	{
+	    "name": "Introducción a las Heurísticas de Nielsen",
+		"path": "heuristics"
+	},
+	{
+	    "name": "H1: Visibilidad del Estado del Sistema" ,
+		"path": "heuristics_show({id: 1})"
+	},
+	{
+	    "name": "H2: Correspondencia entre el sistema y el mundo real",
+		"path": "heuristics_show({id: 2})"
+	},
+	{
+	    "name": "H3: Control y libertad para el Usuario",
+		"path": "heuristics_show({id: 3})"
+	},
+	{
+	    "name": "H4: Consistencia y Estándares",
+		"path": "heuristics_show({id: 4})"
+	},
+	{
+	    "name": "H5: Prevención de Errores",
+		"path": "heuristics_show({id: 5})"
+	},
+	{
+	    "name": "H6: Reconocer antes que Recordar",
+		"path": "heuristics_show({id: 6})"
+	},
+	{
+	    "name": "H7: Flexibilidad y eficiencia de uso",
+		"path": "heuristics_show({id: 7})"
+	},
+	{
+	    "name": "H8: Estética de diálogos y Diseño minimalista",
+		"path": "heuristics_show({id: 8})"
+	},
+	{
+	    "name": "H9: Ayuda a los Usuarios en el Reconocimiento, Diagnóstico y Recuperación de Errores",
+		"path": "heuristics_show({id: 9})"
+	},
+	{
+	    "name": "H10: Ayuda y Documentación",
+		"path": "heuristics_show({id: 10})"
+	},
+	{
+	    "name": "Evaluación Heurística",
+		"path": "heuristic_evaluation_path"
+	}
+]

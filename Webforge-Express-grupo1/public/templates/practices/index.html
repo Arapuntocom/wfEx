@@ -1,0 +1,36 @@
+<div class="container">	
+	<ol class="breadcrumb ms">
+	  	<li><a ui-sref="home">Inicio</a></li>
+	  	<li class="active">Heurísticas</li>
+	</ol>
+
+	<h1 class="topic-title">Módulo de práctica</h1>
+
+	<div ng-repeat="practice in allPractices" ng-app="practices" ng-controller="practices#index">
+		<div ng-init="filter = (exercises | filter: { practice_id : practice.id }).length">
+			<h4>Práctica {{practice.id}}: {{practice.name}}</h4>
+			
+
+
+			<div ng-repeat="exercise in exercises | filter:{practice_id:practice.id}"> 
+				<br>
+				{{exercise.embed}}
+				<form ng-submit="updatePlunkr(field, practice.id)">
+					<p>URL de tu plunk actualizado</p><br>
+					<input type="text" name="field" ng-model="field" /><br><br>
+					<input type="submit" class="btn btn-primary square" value="Actualizar trabajo" />
+				</form>
+			</div>
+			<div ng-if="filter == 0" >
+				<form ng-submit="creaPlunkr(field, practice.id)">
+					<p>URL de tu plunk</p><br>
+					<input type="text" name="field" ng-model="field" /><br><br>
+					<input type="submit" class="btn btn-primary square" value="Registrar trabajo" />
+				</form>
+			</div>
+
+
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,4 @@
+Colocar aca controladores simples y que no sean parte importante de 
+la aplicacion. Ponerlos aqui para que no contamine la carpeta principal
+
+<3

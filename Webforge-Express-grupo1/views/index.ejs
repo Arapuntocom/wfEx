@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="webforge">
+  <head>
+    <title ng-bind="tituloPagina + ' | WebForge'"></title>
+    <link href="images/favicon.ico" rel="shortcut icon">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/metro/build/css/metro.css" />
+    <link rel="stylesheet" href="bower_components/metro/build/css/metro-icons.css" />
+    <link rel="stylesheet" href="bower_components/metro/build/css/metro-rtl.css" />
+    <link rel="stylesheet" href="bower_components/metro/build/css/metro-responsive.css" />
+    <link rel="stylesheet" href="bower_components/metro/build/css/metro-schemes.css" />
+    <!-- endbower -->
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/metro/build/js/metro.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/chatsCtrl.js"></script>
+    <script src="javascripts/coursesCtrl.js"></script>
+    <script src="javascripts/evaluationsCtrl.js"></script>
+    <script src="javascripts/heuristicsCtrl.js"></script>
+    <script src="javascripts/practicesCtrl.js"></script>
+    <script src="javascripts/questionsCtrl.js"></script>
+    <script src="javascripts/usersCtrl.js"></script>
+    <script src="javascripts/services/chatsService.js"></script>
+    <script src="javascripts/services/coursesService.js"></script>
+    <script src="javascripts/services/error.js"></script>
+    <script src="javascripts/services/evaluationsService.js"></script>
+    <script src="javascripts/services/practicesService.js"></script>
+    <script src="javascripts/services/titulo.js"></script>
+    <script src="javascripts/services/urlBase.js"></script>
+    <script src="javascripts/services/usersService.js"></script>
+    <script src="javascripts/services/util.js"></script>
+    <script src="javascripts/simples/errorCtrl.js"></script>
+    <script src="javascripts/simples/footerCtrl.js"></script>
+    <script src="javascripts/simples/homeCtrl.js"></script>
+    <!-- endinject -->  
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="stylesheets/compilado/todo.css">
+    <!-- endinject -->
+    <base href="/">
+  </head>
+  <body>
+    <%- include _header.ejs %>
+    <br>
+
+     <div class="container">
+    <div class="row">
+    <ui-view></ui-view>      
+    </div>
+    </div>
+
+    <%- include _footer.ejs %>
+</html>
+
+

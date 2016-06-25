@@ -1,0 +1,253 @@
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+		  	<li><a ui-sref="home">Inicio</a></li>
+		  	<li class="active"> Usuarios</li>
+		</ol>
+	</div>
+	<div>
+		<h1 class="question-instructions">Usuarios de la aplicación</h1>
+
+			<!-- Modal Nuevo usuario-->
+			<div id="nuevoUsuario" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content" style ="border-radius: 0 !important;">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 id="nuevoUsuarioTag">Nuevo usuario</h4>
+			        <p style="color:red">{{ERRORES}}</p>
+			      </div>
+
+
+			      <div class="modal-body">
+			        
+			     		<form>
+								<div class="field col-xs-12">
+									<label class="active" for="editCorreo">Correo</label><br>
+									<input ng-model="emailUserNew" type="text" class ="form-control ms-input">
+								</div>
+
+								<div class="field col-xs-12">
+									<br>
+									<label class="active" for="NewNombre">Nombre</label><br>
+									<input ng-model="nameUserNew" type="text" class ="form-control ms-input">
+								</div>
+
+								<div class="field col-xs-12">
+									<label class="active" for="NewRut">Rut</label><br>
+									<input ng-model="rutUserNew" type="text" class ="form-control ms-input">
+								</div>
+
+								<div class="field col-xs-12">
+									<label class="active" for="NewPass">Contraseña</label><br>
+									<input ng-model="passwordUserNew" type="password" class ="form-control ms-input">
+								</div>
+
+								<div class="field col-xs-12">
+									<label class="active" for="NewPassConfirmed">Confirmar contraseña</label><br>
+									<input ng-model="password_confirmationUser" type="password" class ="form-control ms-input">
+								</div>
+
+								<div class="field col-xs-12">
+									 <label for="singleSelect"> Tipo de usuario </label>
+							    <select name="singleSelect" ng-model="user_typeUserNew">
+							      <option value="Alumno">Alumno</option>
+							      <option value="Ayudante">Ayudante</option>
+							      <option value="Profesor">Profesor</option>
+							    </select>
+								</div>
+								<p>Atención: Todos los campos requeridos.</p>
+									<button class="btn btn-primary square" ng-click="submit()">Crear Usuario</button>
+									<a href="" data-dismiss="modal" data-target="users#verUsuario{{user.id}}">Volver</a>
+							</form>
+							</div>
+
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+
+			<div class="row">
+					<div class="pull-left">
+						<button type="button" class="btn btn-primary square" data-toggle="modal" data-target="#nuevoUsuario">Crear Usuario</button>
+			</div>
+
+			<div ng-repeat="user in users">
+
+				<!-- Modal Ver usuario-->
+				<div id="verUsuario{{user.id}}" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+
+					  <!-- Modal content-->
+					  <div class="modal-content" style ="border-radius: 0 !important;">
+					    <div class="modal-header">
+					      <button type="button" class="close" data-dismiss="modal">&times;</button>
+					      <h4 id="nuevoUsuarioTag{{user.id}}">Detalle usuario</h4>
+					    </div>
+					   <div class="modal-body" ng-if="user.id!=''">
+								<div class="row">
+									<div class="col-xs-6">
+										<div class="panel panel-default">
+										  <div class="panel-body">
+										    <h2 class="ms-h2">Información básica</h2>
+										    <p>
+										      <strong>Rut:</strong> {{user.rut}}
+										    </p>
+										    <p>
+										      <strong>Correo:</strong> {{user.email}}
+										    </p>
+										    <p>
+										      <strong>Rol:</strong> {{user.user_type}}
+										    </p>
+										  </div>
+										</div>
+									</div>
+									<div class="col-xs-6" ng-if="user.test!=null">
+										<div class="panel panel-default">
+										  <div class="panel-body">
+										    <h2 class="ms-h2">Últimas evaluaciones</h2>
+										      <p>
+										      <strong>Calificación en {{user.name_test}}:</strong>
+										      {{user.test.grade | number:1}}
+										      </p>
+										      <button 
+										      class="btn btn-primary square" 
+										      data-dismiss="modal" 
+										      data-target="users#verUsuario{{user.id}}"
+										      ng-click="verHistorial(user.id)">Ver historial de calificaciones</button>
+										  </div>
+										</div>
+									</div>
+								</div>
+
+								<div>
+									<button type="button" href="users#editarUsuario{{user.id}}" data-toggle="modal"  class="btn btn-primary square">Editar</button>
+
+									<a href="" data-dismiss="modal" data-target="users#verUsuario{{user.id}}">Volver</a>
+								</div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+
+				<!-- Modal Editar usuario-->
+				<div id="editarUsuario{{user.id}}" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+
+					  <!-- Modal content-->
+					  <div class="modal-content" style ="border-radius: 0 !important;">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        <h4 id="nuevoUsuarioTag{{user.id}}">Editar información de {{user.name}}</h4>
+					      </div>
+					    <div class="modal-body" ng-if="user.id!=''">
+									<div class="row">
+										<div class="col-xs-12">
+										
+										    <div class="panel-body">
+										   
+										    	
+										 
+										    	
+									     		<form>
+
+														<div class="field col-xs-12">
+															<label class="active" for="EditCorreo">Correo</label><br>
+															<input ng-init="emailUserEdit=user.email"  ng-model="emailUserEdit"  id="EditCorreo" type="email" class ="form-control ms-input" required> 
+														</div>
+
+														<div class="field col-xs-12">
+															<br>
+															<label class="active" for="EditNombre">Nombre</label><br>
+															<input ng-init="nameUserEdit=user.name" ng-model="nameUserEdit"  id="EditNombre" type="text" class ="form-control ms-input">
+														</div>
+
+														<div class="field col-xs-12">
+															<label class="active" for="EditRut">Rut</label><br>
+															<input ng-init="rutUserEdit=user.rut" ng-model="rutUserEdit"  id="EditRut" type="text" class ="form-control ms-input">
+														</div>
+
+														<div class="field col-xs-12">
+															 <label for="singleSelect"> Tipo de usuario </label>
+													    <select name="singleSelect" ng-init="user_typeUserEdit = user.user_type" ng-model="user_typeUserEdit">
+
+													      <option value="Alumno"> Alumno </option>
+													      <option value="Ayudante">Ayudante</option>
+													      <option value="Profesor">Profesor</option>
+													    </select>
+														</div>
+
+														<div class="field col-xs-12">
+															<label class="active" for="dUser" > Deshabilitar</label>
+															<input type="checkbox"  ng-model="suspendedUserEdit" id="dUser"
+																 ng-true-value="'true'" ng-false-value="'false'" >
+
+														</div> 
+													
+															<button class="btn btn-primary square" ng-click="submit_edit(nameUserEdit,emailUserEdit,rutUserEdit,user_typeUserEdit,suspendedUserEdit)">Actualizar Usuario</button>
+															<a href="" data-dismiss="modal" data-target="users#verUsuario{{user.id}}">Volver</a>
+												</form>
+
+<!-- 													<%= form_for(user) do |f| %>
+													  <div class="field">
+													    <%= f.label :name %><br>
+													    <%= f.text_field :name, class: "form-control ms-input" %>
+													  </div>
+													  <div class="field">
+													    <%= f.label :rut %><br>
+													    <%= f.text_field :rut, class: "form-control ms-input" %>
+													  </div>
+													  <div class="field">
+													    <%= f.label :email %><br>
+													    <%= f.text_field :email, class: "form-control ms-input" %>
+													  </div>
+													  <div class="field">
+													    <%= label :user_type, "Tipo de Usuario" %>
+													    <%= f.select :user_type, options_for_select([["Alumno"], ["Ayudante"], ["Profesor"]]), class: "form-control" %>
+												    </div>
+														<div class="field onoffswitch">
+													    <%= f.label :suspended, "Deshabilitar" %>
+													    <%= f.check_box :suspended, checked: check_if_true(user.suspended)%>
+												    </div> -->
+
+										    </div>
+										
+										</div>
+									</div>
+<!-- 									<div>
+										<button type="button" class="btn btn-primary square" onclick="return confirm('¿Estás seguro que deseas cambiar los datos?')" data-toggle="modal">Actualizar usuario</button>
+										<a href="" data-dismiss="modal" data-target="#editarUsuario{{user.id}}">Volver</a>
+									</div> -->
+					    </div>
+					  </div>
+					</div>
+				</div>
+
+			</div>
+
+		<table class="table" id="tabla_resultado">
+			<tr>
+				<th>Nombre</th>
+				<th>Rut</th>
+				<th>Correo</th>
+				<th>Rol</th>
+				<th class="text-center" colspan="1">Operación</th>
+			</tr>
+			<tr ng-repeat="user in users"> 
+				<td ng-if="user.suspended==true"><span class="glyphicon glyphicon-ban-circle"></span>{{user.name}}</td>
+				<td ng-if="user.suspended==false">{{user.name}}</td>
+				<td>{{user.rut}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.user_type}}</td>
+				<td class="text-center">
+					<a href="users#verUsuario{{user.id}}" ng-click="setSelectedUser(user.id)" data-toggle="modal">
+					<span class="glyphicon glyphicon-eye-open"></span>
+					</a>
+				</td>
+			</tr>	
+		</table>
+	</div>	
+</div>

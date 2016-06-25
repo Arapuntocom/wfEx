@@ -1,0 +1,12 @@
+[
+{
+	"name": "Alexis Casanueva", 
+	"rut": "18.204.469-5", 
+	"email": "alexis.casanueva@usach.cl", 
+	"password": "entrar00", 
+	"password_confirmation": "entrar00", 
+	"admin": false, 
+	"user_type": "Alumno",
+	"id": 2
+}
+]

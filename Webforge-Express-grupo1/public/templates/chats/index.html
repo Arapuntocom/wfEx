@@ -1,0 +1,33 @@
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+			<li><a ui-sref="home">Inicio</a></li>
+			<li class="active"> Conversaciones</li>
+		</ol>
+	</div>
+	<div>
+		<h1 class="question-instructions">Conversaciones</h1>
+
+		<div class="panel panel-default" ng-repeat="chat in chats">			
+			<div class="panel-body">
+				<h2 class="ms-h2">
+    				<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+    				<strong>{{ chat.title }}</strong> de {{ chat.autor_chat }}
+    			</h2>			
+				<p>{{ chat.author_last_message }} dice:</p>
+				<div class="well">{{ chat.last_message }}</div>
+
+				<a class="btn btn-primary square" ui-sref="chats_show({ id: chat.id })">Ver conversacion completa</a>
+
+			</div>
+		</div>	
+
+		<p ng-show="chats.length == 0">No hay conversaciones.</p>
+
+		<div>
+			<a class="btn btn-primary square" ui-sref="home">Volver</a>
+		</div>
+	</div>
+</div>
+
+

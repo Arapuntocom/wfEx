@@ -1,0 +1,58 @@
+<div class="container">
+	<div>
+		<div>
+			<ol class="breadcrumb ms">
+			  	<li><a ui-sref="home">Inicio</a></li>
+			  	<li><a ui-sref="chats">Conversaciones</a></li>
+			  	<li class="active"> {{ chat.title }} de {{ autor_chat }}</li>
+			</ol>
+		</div>
+		<div class="row">
+			<div class="col-xs-10">
+				<h1 class="question-instructions"> {{ chat.title }} de {{ autor_chat }} </h1>		
+			</div>
+			<div class="col-xs-2">
+				<a ui-sref="chats"><span class="glyphicon glyphicon-remove btn-exit" aria-hidden="true"></span></a>
+			</div>	
+		</div>
+		<div>
+
+			<div class="panel-body">
+
+				<div class="input-control textarea" required>
+					<textarea 
+					ng-click="enviandoMensaje.mostrandoResponder = true"
+					placeholder="Escriba su mensaje..." 
+					ng-model="mensajeContenido"
+					ng-class="{'error': enviandoMensaje.warning}">
+					</textarea>
+				</div>
+
+				<a 
+				class="btn btn-primary square" 
+				ng-show="enviandoMensaje.mostrandoResponder"
+				ng-click="enviandoMensaje.enviar()"
+				ng-disabled="enviandoMensaje.disabled">Enviar</a>
+									
+			</div>	
+
+
+			<div ng-repeat="message in chat.messages | orderBy:'-'">
+
+
+						<div class="panel panel-default">
+								<div class="panel-body">
+									<h2 class="ms-h2">
+										<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+										{{ message.autor }} dice:
+									</h2>
+									<p>{{ util.formatoFecha(message.created_at) }}</p>
+									<div class="well">
+										{{ message.body }}
+									</div>
+								</div>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>

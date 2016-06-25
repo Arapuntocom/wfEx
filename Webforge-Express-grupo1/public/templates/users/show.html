@@ -1,0 +1,66 @@
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+			<li><a ui-sref="home">Inicio</a></li>
+			<li><a ui-sref="users">Usuarios</a></li>
+			<li class="active"> {{ user.name }} </li>
+		</ol>
+	</div>
+
+
+	<div class="container">
+		<h1 class="question-instructions">{{ user.name }}</h1>
+		
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h2 class="ms-h2">Información básica</h2>
+						<p>
+							<strong>Rut:</strong> {{ user.rut }}
+						</p>		
+						<p>
+							<strong>Correo:</strong> {{ user.email }}
+						</p>
+						<p>
+							<strong>Rol:</strong> {{ user.user_type }}
+						</p>	
+					</div>
+				</div>	
+			</div>
+
+			<div class="col-xs-6">
+
+				<div class="panel panel-default" ng-show="lastTest">
+					<div class="panel-body">
+						<h2 class="ms-h2">Últimas evaluaciones</h2>
+
+						<strong>Calificación en {{ evaluation.name }}:</strong> 
+
+
+						<table class="table">
+							<tr><td>Ultima nota:</td><td>{{ util.truncarDecimales(lastTest.grade, 2) }}</td></tr>
+							<tr><td>Mejor nota:</td><td>{{ util.truncarDecimales(mejorNota, 2)  }}</td></tr>
+							<tr><td>Peor nota:</td><td>{{ util.truncarDecimales(peorNota, 2)  }}</td></tr>
+							<tr><td>Promedio:</td><td>{{ util.truncarDecimales(promedioNota, 2)  }}</td></tr>
+						</table>
+
+
+						<a ui-sref="users_historial({ id: user.id })" class="btn btn-primary square">Ver historial de calificaciones</a>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div>
+			<a class="btn btn-primary square" ui-sref="users">Volver</a>
+			<a class="btn btn-primary square" ui-sref="editar">Editar</a>		
+			<a class="btn btn-primary square" ng-click="delete()">Eliminar</a>
+		</div>
+
+	</div>
+
+</div>

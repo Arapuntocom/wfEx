@@ -1,0 +1,44 @@
+<div class="container">	
+	<ol class="breadcrumb ms">
+	  	<li><a ui-sref="home">Inicio</a></li>
+	  	<li class="active">Heurísticas</li>
+	</ol>
+
+	<h1 class="topic-title">Heurísticas de Nielsen</h1>
+
+	<p>Una heurística es una regla general basada en la experiencia que explica problemas de usabilidad, otorga pautas sobre porque los usuarios cometen determinados errores y ayuda a identificarlos. Estas reglas son utilizadas por inspectores para evaluar una interfaz en la metodología conocida como Evaluación Heurística.</p>
+
+	<p>En esta metodología, presentada inicialmente por Jakob Nielsen, las heurísticas representan el punto de partida para una lista ítems o sub-heurísticas que una interfaz debe cumplir.</p>
+
+	<p>Estos principios también representan un estándar a seguir en el proceso de diseño y reparación, siguiendo esta idea describiremos las 10 heurísticas desarrolladas por el Dr. Nielsen acompañando cada una por una adaptación de la lista de comprobación creada por Deniese Pierotti para evaluar interfaces orientadas a la Web.</p>
+
+	<h2 class="ms-h2">En este artículo</h2>
+	<ul>
+		<li ng-repeat="heuristica in listaHeuristicas">
+			
+			<a href="/heuristics/{{ $index+1 }}">H{{ $index+1 }}: {{ heuristica }}</a>	
+		</li>
+
+		<li><a href="/heuristic_evaluation">Evaluación Heurística</a></li>
+	</ul>
+
+	<div>
+		<div class="back-box">
+			<a  ui-sref="introduction">
+				<span class="glyphicon glyphicon-circle-arrow-left page-nav-btn" aria-hidden="true"></span>
+			</a>
+		</div>
+		
+		<div class="next-box">
+			<a id="next" ui-sref="heuristics_show({id:1})">
+				<span class="glyphicon glyphicon-circle-arrow-right page-nav-btn" aria-hidden="true"></span>
+			</a>	
+		</div>
+	</div>
+	<h2 class="ms-h2">Recursos relacionados</h2>
+	<ul>
+		<li><a target="_blank" href="http://www.nngroup.com/articles/ten-usability-heuristics/">Heuŕisticas de Nielsen (ENG, WEB)</a></li>
+		<li><a target="_blank" href="http://designingwebinterfaces.com/6-tips-for-a-great-flex-ux-part-5">Ejemplos de las 10 Heurísticas (ENG, WEB)</a></li>
+		<li><a target="_blank" href="http://aipo.es/libro/pdf/15-Evaluacion-Heuristica.pdf">Evaluación Heurística y Lista de comprobación de ítems de D. Pierotti (ESP, PDF)</a></li>
+	</ul>
+</div>

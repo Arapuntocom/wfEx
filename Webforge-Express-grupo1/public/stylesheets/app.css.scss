@@ -1,0 +1,910 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Segoi UI Light';
+  src: url(../../fonts/segoeuil.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Segoi UI Regular';
+  src: url(../../fonts/segoeui.ttf) format('truetype');
+}
+
+body {
+  padding-top: 50px!important;
+}
+
+
+#bar {
+ background-color: #0078D7;
+}
+
+/* Images */
+
+div.last-grade {
+  float: right;
+}
+
+a {
+
+  font-family: 'Segoi UI Regular';
+  font-size: 16px;
+  color: #1e75bb;
+  font-weight: 300;
+  line-height: 1.42857;
+  /*pendiente division*/
+}
+
+a:hover{
+  text-decoration: none!important;
+  color: #2EB8E6!important;
+}
+
+.textarea{
+  width:100%;
+}
+
+
+/*
+* Clase para el menu desplegable, cuando se pone el mouse encima de una celda
+*/
+.d-menu:hover li a:hover{
+  background-color:#e6e6e6!important;
+  color:#727272!important;
+}
+.menu-heuristicas{
+  width:500px!important;
+  max-width:500px!important;
+}
+
+
+
+/*
+* Esta clase CSS esta muy parchada. Hay que refactorizar los CSS en alguna iteracion ;)
+*/
+
+.btn-primary, .btn-primary:visited, .btn-primary:active, .btn-primary:focus{
+  padding:15px!important;
+  color:#ffffff!important;
+  background-color: #2086bf!important;
+  border:0!important;
+  height:40px!important;
+  vertical-align: middle!important;
+  line-height:5px!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+
+
+.btn-primary:hover{
+  color:#ffffff!important;
+  background-color:#1b6eae!important;
+}
+
+
+.app-bar-menu a:hover {
+  color:#ffffff!important;
+}
+
+.app-logo {
+  height: 20px;
+  width: auto;
+  margin: 0px;
+  padding:0;
+}
+
+div.btns {
+  float: left;
+  margin-right: 5px;
+}
+
+
+
+
+/* Text */
+
+h1.topic-title {
+  padding: 0 0 84px 0;
+    margin: 0 0 0 -3px;
+    color: #454545;
+    font-size: 3em;
+    font-weight: normal;
+    line-height: 1.2em;
+    font-family: 'Segoi UI Light';
+    clear: both;
+}
+
+h2.ms-h2 {
+  font-size: 1.45em;
+    line-height: 1.24em;
+    font-family: 'Segoi UI Regular';
+    color: #454545;
+    margin-bottom: 15px;
+    margin-left: -1px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+p, li {
+  font-family: 'Segoi UI Regular';
+  font-size: 17px;
+  font-weight: 300;
+  color: #454545;
+    margin: 0;
+    line-height: 1.42857;
+    padding-bottom: 5px;
+}
+
+a {
+  font-family: 'Segoi UI Regular';
+  font-size: 16px;
+  color: #1e75bb;
+  font-weight: 300;
+  line-height: 1.42857;
+  /*pendiente division*/
+}
+
+a:hover{
+  text-decoration: none!important;
+  color: #2EB8E6!important;
+}
+
+
+
+/* Forms */
+
+.form-control.ms-input {
+  border-radius:0;
+    font-family: 'Segoi UI Light';
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    margin-top: 6px;
+
+}
+
+.btn.square {
+  border-radius: 0;
+}
+
+/* Lists */
+
+ol, ul {
+  margin: 5px 0 20px 0;
+  padding: 0 0 0 1px;
+  list-style-position: inside;
+}
+
+
+/* Breadcrumbs */
+
+/* Change breadcrumb background color */
+.breadcrumb.ms {
+     background-color: transparent;
+     border-radius: 0;
+     -moz-border-radius: 0;
+     -webkit-border-radius: 0;
+     -o-border-radius: 0;
+     padding-left: 0px;
+     margin-top: 25px;
+}
+
+/* Change breadcrumb links color */
+.breadcrumb.ms a {
+     color: #656565;
+     font-size: 16px;
+     font-family: 'Segoi UI Light';
+}
+
+.breadcrumb.ms a:hover {
+     text-decoration: none;
+}
+
+/* Change active color*/
+.breadcrumb.ms > .active {
+     color: #00188f;
+     font-size: 16px;
+     font-family: 'Segoi UI Light';
+}
+
+/* Change breadcrumb separator to raquo symbol*/
+.breadcrumb.ms > li + li:before {
+     content: "\003E\00a0";
+     color: #656565;
+     font-size: 15px;
+}
+
+
+/* Buttons */
+
+.glyphicon.page-nav-btn {
+  font-size: 3em;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.next-box {
+  text-align: right;
+  float: right;
+  width: 50%;
+}
+
+.back-box {
+  text-align: left;
+  float: left;
+  width: 50%;
+}
+
+
+
+
+/* Heuristic */
+
+.side-bar {
+  background-color: #ebeff0;
+    padding: 12px 15px;
+  margin-left: 24px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+    width: 188px;
+    word-wrap: break-word;
+  float: right;
+    display: block;
+}
+
+.side-bar h2 {
+  margin-top: 0px;
+}
+
+.side-bar ul {
+  list-style-type: none;
+}
+
+.side-bar li {
+  padding-top: 11px;
+  .dropdown-menu {
+		min-width: 325px;
+        white-space: normal;
+	}
+  .dropdown-menu li a {
+      padding: 5px 15px;
+      font-weight: 300;
+  }
+}
+
+.dropdown-menu {
+      min-width: 325px;
+      white-space: normal;
+  }
+.dropdown-menu li a {
+    padding: 5px 15px;
+    font-weight: 300;
+}
+
+
+/* Breadcrumbs */
+
+/* Change breadcrumb background color */
+.breadcrumb.ms {
+     background-color: transparent;
+     border-radius: 0;
+     -moz-border-radius: 0;
+     -webkit-border-radius: 0;
+     -o-border-radius: 0;
+     padding-left: 0px;
+     margin-top: 25px;
+}
+
+/* Change breadcrumb links color */
+.breadcrumb.ms a {
+     color: #656565;
+     font-size: 16px;
+     font-family: 'Segoi UI Light';
+}
+
+.breadcrumb.ms a:hover {
+     text-decoration: none;
+}
+
+/* Change active color*/
+.breadcrumb.ms > .active {
+     color: #00188f;
+     font-size: 16px;
+     font-family: 'Segoi UI Light';
+}
+
+/* Change breadcrumb separator to raquo symbol*/
+.breadcrumb.ms > li + li:before {
+     content: "\003E\00a0";
+     color: #656565;
+     font-size: 15px;
+}
+
+
+
+
+
+/* Metro */
+
+/* GENERAL */
+/* Buttons*/
+
+.btn-inverse {
+  color: #ffffff;
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:hover,
+.btn-inverse:focus,
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse:active,
+.btn-inverse.active,
+.open .dropdown-toggle.btn-inverse {
+  background-image: none;
+}
+
+.btn-inverse.disabled,
+.btn-inverse[disabled],
+fieldset[disabled] .btn-inverse,
+.btn-inverse.disabled:hover,
+.btn-inverse[disabled]:hover,
+fieldset[disabled] .btn-inverse:hover,
+.btn-inverse.disabled:focus,
+.btn-inverse[disabled]:focus,
+fieldset[disabled] .btn-inverse:focus,
+.btn-inverse.disabled:active,
+.btn-inverse[disabled]:active,
+fieldset[disabled] .btn-inverse:active,
+.btn-inverse.disabled.active,
+.btn-inverse[disabled].active,
+fieldset[disabled] .btn-inverse.active {
+  background-color: #1D1D1D;
+  border-color: #1D1D1D;
+}
+
+.btn-inverse .badge {
+  color: #1D1D1D;
+  background-color: #ffffff;
+}
+
+.btn.m-square {
+  border-radius:0;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.btn.form-btn {
+  float: right;
+  margin-top: 10px;
+}
+
+.btn.back{
+  font-size: 28px;
+  padding-bottom: 0px;
+  padding-top: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+  background-color: white;
+  color: black;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 17px;
+
+}
+
+/* Boxes */
+.centered-box {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* Text and messages */
+.error {
+  font-family: 'Segoi UI Regular';
+  color: #c85305;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.success {
+  font-family: 'Segoi UI Regular';
+  color: green;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+h1.metro-h1 {
+  font-family: 'Segoi UI Light';
+}
+
+h3.metro-h3 {
+  font-family: 'Segoi UI Light';
+}
+
+.metro-regular-text {
+  font-family: 'Segoi UI Regular';
+  color: #000;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+
+
+
+/* Forms and inputs */
+
+.form-control:focus {
+  color: #000;
+}
+
+.form-control.square {
+  border-radius:0;
+  font-family: 'Segoi UI Light';
+  font-size: 1.1em;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* LOGIN */
+h1.metro-h1.gray {
+  color: #666;
+}
+
+#login-container {
+  position: absolute;
+  top: 0;
+    left: 0;
+  width: 100%;
+  height: 100%;
+    background-color: #004050;
+}
+
+.centered-box.login {
+  width: 350px;
+  height: 350px;
+  margin-top:-175px;
+  margin-left:-175px;
+  background-color: white;
+  padding: 20px;
+}
+
+/* HEADER */
+.header {
+  background-color: #1d1d1d;
+}
+
+.welcome {
+  margin-left:15px;
+  margin-top:10px;
+}
+
+.menu-col {
+  text-align: right;
+}
+
+.m-user-name {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.m-user-icon {
+  text-align: center;
+  display: inline-block;
+  color: white;
+  background-color: #999999;
+  height: 32px;
+  width: 40px;
+  padding-top: 6px;
+}
+
+.header-buttons {
+  margin-right: 15px;
+  margin-top: -3px;
+}
+
+/* SHOW */
+#show-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+}
+
+.centered-box.show {
+  top: 35%;
+  width: 670px;
+  height: 304px;
+  margin-top:-152px;
+  margin-left:-335px;
+}
+
+.centered-show {
+  width: 665px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1.metro-h1.white {
+  color: white;
+}
+
+.subtitle {
+  color: #ffffff;
+  font-family: 'Segoi UI Regular';
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.btn-text {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Segoi UI Light';
+  font-size: 16px;
+}
+
+.balance-text {
+  line-height: 125px;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Segoi UI Light';
+  font-size: 36px;
+}
+
+.btn.btn-xxxlg {
+  display: block;
+  border-radius:0;
+  font-size: 42px;
+  line-height: normal;
+  width: 125px;
+  height: 125px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.balance-box {
+  width: 250px;
+  height: 125px;
+  background-color: #9900CC;
+  margin-left: 50px
+}
+
+.first-elm-left {
+  margin-bottom: 30px;
+}
+
+.first-elm-right {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* DEPOSIT */
+
+#deposit-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+}
+
+.centered-box.deposit {
+  top: 40%;
+  width:350px;
+  height: 325px;
+  margin-top:-162.5px;
+  margin-left:-175px;
+  background-color: white;
+}
+
+/* WITHDRAWAL */
+
+#withdrawal-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+}
+
+.centered-box.withdrawal {
+  top: 40%;
+  width:350px;
+  height: 325px;
+  margin-top:-162.5px;
+  margin-left:-175px;
+  background-color: white;
+}
+
+/* TRANSFER */
+
+#transfer-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+}
+
+.centered-box.transfer {
+  top: 40%;
+  width:350px;
+  height: 390px;
+  margin-top:-195px;
+  margin-left:-175px;
+  background-color: white;
+}
+
+/* LOCK */
+
+#lock-container {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+}
+
+.centered-box.lock {
+  top: 30%;
+  width:450px;
+  height: 220px;
+  margin-top:-110px;
+  margin-left:-225px;
+  background-color: white;
+}
+
+/* HISTORY */
+.centered-box.history {
+  top: 10%;
+  width:450px;
+  height: 450px;
+  margin-top:-225x;
+  margin-left:-225px;
+  background-color: white;
+}
+
+/*boton para deshabilitar*/
+
+    .onoffswitch {
+        position: relative; width: 130px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #EBEFF0; border-radius: 20px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+        font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "     Habilitado";
+        padding-left: 16px;
+        background-color: #008000; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "Deshabilitado";
+        padding-right: 16px;
+        background-color: #E6E6E6; color: #777;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 20px; margin: 5px;
+        background: #EBEFF0;
+        position: absolute; top: 0; bottom: 0;
+        right: 96px;
+        border: 2px solid #EBEFF0; border-radius: 20px;
+        transition: all 0.3s ease-in 0s;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px;
+    }
+
+
+
+
+
+.greetings-container {
+  padding-left: 31px;
+
+}
+
+.random-message {
+  color: #fff;
+    font-family: 'Segoi UI Light';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+
+
+/* Wizard */
+
+fieldset {
+    position: relative;
+    display: none;
+    padding: 20px;
+    label, input, select {
+        display: block;
+        width: auto;
+    }
+}
+
+.magic-anchor {
+  top: -52px;
+}
+
+fieldset.step {
+    &:target {
+        display: block;
+    }
+}
+
+fieldset.step:target ~ .intro {
+    display: none;
+}
+
+.exercise-form {
+  margin-top: 15px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+
+
+/* Chat */
+
+.my-message {
+  display: block;
+  float: right;
+  max-width: 50%;
+}
+
+.their-message {
+  display: block;
+  float: left;
+  max-width: 50%;
+}
+
+.clear { clear:both; }
+
+
+/* Banners */
+
+.greetings-container {
+
+  background-color: #337ab7!important;
+  color:#fff!important;
+  padding:20px 15px;
+  text-align:center;
+
+}
+.greetings-container p{
+  color:#fff!important;
+}
+
+
+
+
+
+.greetings-container {
+  padding-left: 31px;
+
+}
+
+.random-message {
+  color: #fff;
+    font-family: 'Segoi UI Light';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+
+
+/* Wizard */
+
+fieldset {
+    position: relative;
+    display: none;
+    padding: 20px;
+    label, input, select {
+        display: block;
+        width: auto;
+    }
+}
+
+.magic-anchor {
+  top: -52px;
+}
+
+fieldset.step {
+    &:target {
+        display: block;
+    }
+}
+
+fieldset.step:target ~ .intro {
+    display: none;
+}
+
+.exercise-form {
+  margin-top: 15px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+
+
+/* Chat */
+
+.my-message {
+  display: block;
+  float: right;
+  max-width: 50%;
+}
+
+.their-message {
+  display: block;
+  float: left;
+  max-width: 50%;
+}
+
+.clear { clear:both; }
+
+
+/* Banners */
+
+.greetings-container {
+
+  background-color: #337ab7!important;
+  color:#fff!important;
+  padding:20px 15px;
+  text-align:center;
+
+}
+.greetings-container p{
+  color:#fff!important;
+}
+
+.button-banner-cover{
+  color:#fff!important;
+  font-weight: bold;
+  font-size:18px;
+  border: 1px solid #fff;
+  padding:10px;
+  width: 200px;
+  margin: 0 auto;
+  display:block;
+}

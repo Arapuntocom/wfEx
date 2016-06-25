@@ -1,0 +1,40 @@
+<div class="container">
+	<div>
+		<ol class="breadcrumb ms">
+		  	<li><a ui-sref="home">Inicio</a></li>
+		  	<li><a ui-sref="courses">Cursos</a></li>
+		  	<li class="active">{{ curso.name }}</li>
+		</ol>
+	</div>
+	<div>
+		<h1 class="question-instructions">{{ curso.name }}</h1>		
+
+
+
+		<table class="table" ng-show="alumnosCurso.length > 0">
+			<tr>
+				<th>Alumno</th>
+				<th>Rut</th>
+				<th>Correo</th>
+				<th class="text-center" colspan="3">Operaciones</th>
+			</tr>
+
+			<tr ng-repeat="alumno in alumnosCurso">
+				<td>{{ alumno.name }}</td>
+				<td>{{ alumno.rut }}</td>
+				<td>{{ alumno.email }}</td>
+				<td class="text-center"><a class="glyphicon glyphicon-eye-open" ui-sref="users_show({ id: alumno.id })"></a></td>
+			</tr>
+
+		</table>
+
+		<p ng-show="alumnosCurso.length == 0">No hay alumnos inscritos en este curso.</p>
+
+
+		<div>
+			<a class="btn btn-primary square" ui-sref="courses">Volver</a>
+		</div>
+	</div>
+</div>
+
+
